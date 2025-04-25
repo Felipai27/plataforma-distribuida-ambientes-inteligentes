@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sensores;
+
+message DadosSensor {
+  string temperatura = 1;
+  string luminosidade = 2;
+  string presenca = 3;
+}
+
+message Resposta {
+  string mensagem = 1;
+}
+
+service ArmazenamentoService {
+  rpc EnviarDados (DadosSensor) returns (Resposta);
+}
